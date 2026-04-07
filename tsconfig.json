@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "CommonJS",
+        "strict": true,
+        "noImplicitAny": true,
+        "declaration": false,
+        "skipLibCheck": true,
+        "strictNullChecks": true,
+        "resolveJsonModule": true,
+        "rootDir": "./src",
+        "outDir": "./dist"
+    },
+    "include": ["src", "src/config.ts"],
+    "exclude": ["node_modules"]
+}

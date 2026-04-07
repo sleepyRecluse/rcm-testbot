@@ -1,0 +1,30 @@
+{
+  "name": "rcm_discordbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node .",
+    "deploy": "tsx src/deploy-commands.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sleepyRecluse/RCM_DiscordBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sleepyRecluse/RCM_DiscordBot/issues"
+  },
+  "homepage": "https://github.com/sleepyRecluse/RCM_DiscordBot#readme",
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "tsx": "^4.21.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.1"
+  }
+}
