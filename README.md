@@ -1,11 +1,16 @@
-# rcm-testbot
+# RCM TESTBOT
 
 Personal copy RCM Bot created for testing command functionality
 
 ## Running Application
 
-npm install dotenv
+npm install
+
+npm run deploy
 npm run build
 
-npm run start (run in javascript)
-npm run dev (run in typescript)
+**_Run in javascript:_**
+npm run start
+
+**_Run in typescript:_**
+npm run dev

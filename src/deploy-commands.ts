@@ -1,8 +1,9 @@
-import { REST, Routes, SlashCommandBuilder } from "discord.js";
+import { REST, Routes } from "discord.js";
 import { config } from "./config";
 import * as ping from "./commands/ping";
+import * as createJob from "./commands/createJob";
 
-const commands = [ping.data];
+const commands = [ping.data, createJob.data];
 
 const rest = new REST({ version: "10" }).setToken(config.token!);
 
