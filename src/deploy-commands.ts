@@ -2,10 +2,11 @@ import { REST, Routes } from "discord.js";
 import { config } from "./config";
 import * as ping from "./commands/ping";
 import * as createJob from "./commands/createJob";
+import * as moveJob from "./commands/moveJob";
 
-const commands = [ping.data, createJob.data];
+const commands: any[] = [ping.data, createJob.data, moveJob.data];
 
-const rest = new REST({ version: "10" }).setToken(config.token!);
+const rest: REST = new REST({ version: "10" }).setToken(config.token!);
 
 (async () => {
   try {

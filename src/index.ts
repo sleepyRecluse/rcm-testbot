@@ -2,8 +2,9 @@ import { Client, Events, GatewayIntentBits } from "discord.js";
 import { config } from "./config";
 import * as ping from "./commands/ping";
 import * as createJob from "./commands/createJob";
+import * as moveJob from "./commands/moveJob";
 
-const client = new Client({
+const client: Client<boolean> = new Client({
   intents: [GatewayIntentBits.Guilds],
 });
 
@@ -19,6 +20,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
   }
   if (interaction.commandName === "create-job") {
     await createJob.execute(interaction);
+  }
+  if (interaction.commandName === "move-channel") {
+    await moveJob.execute(interaction);
   }
 });
 

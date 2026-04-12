@@ -3,9 +3,11 @@ import {
   ChatInputCommandInteraction,
   SlashCommandBuilder,
   PermissionFlagsBits,
+  ForumChannel,
+  Guild,
 } from "discord.js";
 
-export const data = new SlashCommandBuilder()
+export const data: any = new SlashCommandBuilder()
   .setName("create-job")
   .setDescription("Creates new category using user selected name")
   .addStringOption((option) =>
@@ -16,26 +18,20 @@ export const data = new SlashCommandBuilder()
   );
 
 export async function execute(interaction: ChatInputCommandInteraction) {
-  const jobId = interaction.options.getString("job-id", true);
-  const jobName = interaction.options.getString("job-name", true);
-  const guild = interaction.guild;
-  const roleId = interaction.user.id;
-  console.log(roleId);
+  const jobId: string = interaction.options.getString("job-id", true);
+  const jobName: string = interaction.options.getString("job-name", true);
+  const guild: Guild | null = interaction.guild;
+  const roleId: string = interaction.user.id;
 
   if (guild) {
-    // const category = await guild.channels.create({
-    //   name: `${jobName}`,
-    //   type: ChannelType.GuildCategory,
-    // });
-
-    const channel = await guild.channels.create({
+    const channel: ForumChannel = await guild.channels.create({
       name: `${jobId}_${jobName}`,
       type: ChannelType.GuildForum,
       parent: "1491611687478890596",
 
       permissionOverwrites: [
         {
-          id: guild.roles.everyone.id,
+          id: "1492937571389542490",
           deny: [
             PermissionFlagsBits.ViewChannel,
             PermissionFlagsBits.SendMessages,
